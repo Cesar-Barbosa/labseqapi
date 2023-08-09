@@ -23,6 +23,8 @@ public class LabseqController {
             return ResponseEntity.ok(result);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (StackOverflowError e) {
+            return ResponseEntity.status(500).body("Calculation error: Stack overflow occurred. Input may be too large.");
         }
     }
 }

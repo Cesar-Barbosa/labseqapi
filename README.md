@@ -57,6 +57,22 @@ Navigate to:
 Enter the desired value.
 Click on the GET button to view the result.
 
+## Hypothesis handling:
+
+Regarding user input: Considering that the user can enter any value in the GET endpoint /labseq/{n}, I formulated a hypothesis that the user enters a negative value. There is a check implemented for this possibility, whereby the user will be informed that the value is invalid.
+
+I introduced a caching system to optimize subsequent calculations, I verified that the values do not change so storing them for quick reuse is effective and does not introduce errors.
+
+As for security we have spring.security.user.name and spring.security.user.password, it is an authentication model that can be implemented but for testing purposes it is in /labseqapi/src/main/resources/application.properties.
+
+In the documentation Swagger has been included for visual and interactive interface so that end users or developers can interact with the API.
+
+Question validated:
+In the API response there is an issue of a response to very large integers that cannot be represented by a standard integer data type. In the context of the code, there should be concern about very deep calls in the calculate function in the LabseqService class due to the recursive nature of the function.
+
+Tests to check assumptions have also been included to cover scenarios.
+
+
 ##Swagger Documentation
 
 The API's endpoints and details are well documented and can be accessed via Swagger at:
