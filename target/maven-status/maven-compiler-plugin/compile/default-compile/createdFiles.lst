@@ -1,0 +1,4 @@
+com\mycompany\SwaggerConfig.class
+com\mycompany\LabseqController.class
+com\mycompany\LabseqService.class
+com\mycompany\Application.class

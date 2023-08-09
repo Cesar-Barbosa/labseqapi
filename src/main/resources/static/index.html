@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labseq Calculator</title>
+</head>
+<body>
+    <p>Enter a number greater than zero:</p>
+    <input type="number" id="number" placeholder="Enter a number">
+    <button onclick="fetchLabseq()"> Get Value </button>
+    <p id="errorContainer" style="display: none;">Error: <span id="error" style="color:red;"></span></p>
+    <p><span id="resultPrefix">Result: </span> <span id="result"></span></p>
+
+    <script>
+        function fetchLabseq() {
+			
+	    let n = document.getElementById("number").value;
+	            
+	    document.getElementById("error").textContent = '';
+	    document.getElementById("resultPrefix").style.display = 'inline';
+	    document.getElementById("errorContainer").style.display = 'none';
+	
+	    fetch(`/labseq/${n}`)
+	        .then(response => {
+	            if (!response.ok) {
+	                return response.text().then(text => {
+	                    throw new Error(text);
+	                });
+	            }
+	            return response.json();
+	        })
+	        .then(data => {
+	            document.getElementById("result").textContent = data;
+	        })
+	        .catch(error => {
+	            document.getElementById("error").textContent = error.message;
+	            document.getElementById("errorContainer").style.display = 'block';
+	            document.getElementById("result").textContent = '';
+	            document.getElementById("resultPrefix").style.display = 'none';
+	        });
+	}
+    </script>
+</body>
+</html>
