@@ -1,18 +1,18 @@
 package com.mycompany;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.stereotype.Service;
 
 @Service
 public class LabseqService {
 
-    private final Map<Long, Long> cache = new HashMap<>();
+    private final Map<Long, Long> cache = new ConcurrentHashMap<>();
 
     public long calculate(long n) {
         if (n < 0) {
-            throw new IllegalArgumentException("Input value cannot be negative");
+            throw new IllegalArgumentException("Input value cannot be negative.");
         }
 
         if (n == 0) return 0;

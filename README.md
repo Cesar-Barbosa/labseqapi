@@ -1,10 +1,12 @@
 #ServiceRest
 
-A REST API that provides calculations for lab sequences. Built with Spring Boot, this API is capable of performing efficient calculations and returns results to its clients.
+This is a web application to get values from labseq sequences.
+A REST API that provides calculations for labseq. Built with Spring Boot, this API is able to perform efficient calculations and return the results to its clients.
 
 ##Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
 ###Prerequisites
 
 To run the project, you will need:
@@ -24,6 +26,9 @@ cd labseqapi
 mvn clean install
 mvn spring-boot:run
 ```
+Note:
+
+To view the API documentation, the backend must be running.
 
 ##Running the Tests
 
