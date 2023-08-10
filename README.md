@@ -64,18 +64,17 @@ Click on the GET button to view the result.
 
 ## Hypothesis handling:
 
-Regarding user input: Considering that the user can enter any value in the GET endpoint /labseq/{n}, I formulated a hypothesis that the user enters a negative value. There is a check implemented for this possibility, whereby the user will be informed that the value is invalid.
+User Input: Anticipating that the user can enter any value in the GET /labseq/{n} endpoint, I added a validation for negative values. In case of entering a negative value, the system will notify the user about the invalidity of the input.
 
-I introduced a caching system to optimize subsequent calculations, I verified that the values do not change so storing them for quick reuse is effective and does not introduce errors.
+Optimization with Cache: I implemented a caching system to improve the efficiency of the calculations. I found that the resulting values do not vary, making caching an effective strategy without risk of errors.
 
-As for security we have spring.security.user.name and spring.security.user.password, it is an authentication model that can be implemented but for testing purposes it is in /labseqapi/src/main/resources/application.properties.
+Security: As far as security is concerned, we have the spring.security.user.name and spring.security.user.password settings for authentication. Although they are only and exclusively for testing purposes, and under no condition are they used in other environments than the testing one; they are located in /labseqapi/src/main/resources/application.properties. Additionally, I implemented CORS configurations for access control.
 
-In the documentation Swagger has been included for visual and interactive interface so that end users or developers can interact with the API.
+Documentation: I integrated Swagger, providing a visual and interactive interface, making it easier for both users and developers to interact with the API.
 
-Question validated:
-In the API response there is an issue of a response to very large integers that cannot be represented by a standard integer data type. In the context of the code, there should be concern about very deep calls in the calculate function in the LabseqService class due to the recursive nature of the function.
+Problems Identified: In the API response, I identified a limitation in representing very large integers. Also, due to the recursive nature of the calculation method in LabseqService, there is the potential for excessively deep calls, requiring attention. For this reason I implemented an error handling for large numbers.
 
-Tests to check assumptions have also been included to cover scenarios.
+Testing: To ensure the robustness of the system, I implemented tests covering various scenarios and validating the set assumptions. Unit tests, exception tests, performance tests and integration tests were performed.
 
 
 ##Swagger Documentation

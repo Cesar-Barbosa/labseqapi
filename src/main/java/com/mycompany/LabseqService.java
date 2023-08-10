@@ -27,4 +27,9 @@ public class LabseqService {
         cache.put(n, result);
         return result;
     }
+    
+    public void clearCache() {
+        cache.clear();
+    }
+    
 }
