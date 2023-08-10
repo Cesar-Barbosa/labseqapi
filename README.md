@@ -37,7 +37,7 @@ mvn test
 ```
 
 
-##Using the API
+##Using the API:
 ###Directly via URL
 
 You can test the API directly by visiting
@@ -110,6 +110,6 @@ Author
 
 This project is licensed under the MIT License - read this LICENSE.md file for details to run this project and to test. 
 
-Acknowledgments:
+##Acknowledgments:
 Thank you to all the contributors, the Spring community and 
 I would also like to express my gratitude for this opportunity. It was an enriching experience and I thank you for your trust.

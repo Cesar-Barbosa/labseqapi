@@ -24,7 +24,7 @@ public class LabseqController {
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (StackOverflowError e) {
-            return ResponseEntity.status(500).body("Calculation error: Stack overflow occurred. Input may be too large.");
+            return ResponseEntity.status(500).body("The value you entered is too large to be processed. Please enter a smaller number.");
         }
     }
 }
