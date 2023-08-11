@@ -1,5 +1,6 @@
-com\mycompany\LabseqService.class
-com\mycompany\SwaggerConfig.class
-com\mycompany\LabseqController.class
-com\mycompany\Application.class
-com\mycompany\WebConfig.class
+com\seqlab\SwaggerConfig.class
+com\seqlab\Application.class
+com\seqlab\CacheSeqLab.class
+com\seqlab\LabseqController.class
+com\seqlab\LabseqService.class
+com\seqlab\WebConfig.class

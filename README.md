@@ -76,6 +76,7 @@ Problems Identified: In the API response, I identified a limitation in represent
 
 Testing: To ensure the robustness of the system, I implemented tests covering various scenarios and validating the set assumptions. Unit tests, exception tests, performance tests and integration tests were performed.
 
+Because the cache is of vital importance, a class was created to handle it.
 
 ##Swagger Documentation
 
